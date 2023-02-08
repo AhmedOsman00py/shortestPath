@@ -10,10 +10,10 @@ library(shortestPath)
 
 vous pourrez ainsi utiliser les fonctions :
 
-- BellmanFordR
+- `BellmanFordR`
 
-- BellmanFordC
+- `BellmanFordC`
 
-- DijkstraR
+- `DijkstraR`
 
-- DijkstraC
+- `DijkstraC
