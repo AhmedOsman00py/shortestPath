@@ -1,26 +1,26 @@
-//' Dijkstra Algorithm to find shortest path from a node to others
-//'
-//' 
-//' @param Graphe Data.frame object with three variables (from, to and weight)
-//' that contains the edges of the graph_DataFrame (from, to) with the weight of the edge (w)
-//' @param source initial node (could be int).
-//' @param dest destination node (could be int)
-//' @return list of two elements.
-//' Distance: the shortest distance from the start node to other nodes (vector)
-//' parents : the predecessor of each node (vector)
-//' @export
-//'
-//' @examples
-//' matriceAdjacence = t(matrix(data = c(0  , 0  ,  0  ,  0  ,  0  ,    5  , 0,
-//'                                    3  , 0  ,  0  ,  10 ,  3  ,   11  , 0,
-//'                                    0  , 1  ,  0  ,  7  ,  0  ,   0   , 0,
-//'                                    0  , 0  ,  0  ,  0  ,   0 ,    0  , 0,
-//'                                    0  , 0  ,  0  ,  4  ,  0  ,    0  , 0,
-//'                                    1  , 0  ,  0  ,  0  ,  0  ,    0  , 0,
-//'                                    5  , 0  ,  0  ,  0  ,  4  ,    0  , 0), nrow  = 7))
-//' DijkstraRcpp(matriceAdjacence, 2, 5)
+/**
+\Dijkstra Algorithm to find shortest path from a node to others
+\
+\
+\@param Graphe Data.frame object with three variables (from, to and weight)
+\that contains the edges of the graph_DataFrame (from, to) with the weight of the edge (w)
+\@param source initial node (could be int).
+\@param dest destination node (could be int)
+\@return list of two elements.
+\Distance: the shortest distance from the start node to other nodes (vector)
+\parents : the predecessor of each node (vector)
+\@export
+\\@examples
+\matriceAdjacence = t(matrix(data = c(0  , 0  ,  0  ,  0  ,  0  ,    5  , 0,
+\                                   3  , 0  ,  0  ,  10 ,  3  ,   11  , 0,
+\                                   0  , 1  ,  0  ,  7  ,  0  ,   0   , 0,
+\                                   0  , 0  ,  0  ,  0  ,   0 ,    0  , 0,
+\                                   0  , 0  ,  0  ,  4  ,  0  ,    0  , 0,
+\                                   1  , 0  ,  0  ,  0  ,  0  ,    0  , 0,
+\                                   5  , 0  ,  0  ,  0  ,  4  ,    0  , 0), nrow  = 7))
+\DijkstraRcpp(matriceAdjacence, 2, 5)
 
-
+*/
 
 #include <RcppArmadillo.h>
 #include <Rcpp.h>
