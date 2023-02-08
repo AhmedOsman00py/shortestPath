@@ -17,3 +17,5 @@ vous pourrez ainsi utiliser les fonctions :
 - `DijkstraR`
 
 - `DijkstraC`
+
+- `dijkstraRcpp`
