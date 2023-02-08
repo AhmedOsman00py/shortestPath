@@ -50,7 +50,8 @@ void dijkstraRcpp(NumericMatrix graph, int source, int dest) {
 
   for (int count = 0; count < V - 1; count++) {
 
-    int min = INT_MAX, min_index;
+    int min = INT_MAX;
+    int min_index = -1;
 
     for (int v = 0; v < V; v++)     {
 
