@@ -24,11 +24,6 @@ The algorithm takes a graph_DataFrame and an initial node and calculates the sho
 }
 \examples{
 graph_DataFrame <-
- data.frame(from=c(1,6,2,2,2,2,7,7,5,3,3),
-          to=c(6,1,1,6,5,4,1,5,4,4,2),
-          weight=c(5,1,3,11,3,10,5,4,4,7,1))
-dijkstra(graph_DataFrame, 3)
-graph_DataFrame <-
  data.frame(from=c("1","6","2","2","2","2","7","7","5","3","3"),
           to=c("6","1","1","6","5","4","1","5","4","4","2"),
           weight=c(5,1,3,11,3,10,5,4,4,7,1))
