@@ -1,2 +1,2 @@
-# shortestPath
-Package R qui contient les algorithmes Dijkstra et Bellman–Ford en R et C++
+# M2Algorithmique
+Projet Algorithmique - M2 Data Science

@@ -1,0 +1,53 @@
+#include <Rcpp.h>
+using namespace Rcpp;
+ 
+// [[Rcpp::export]]
+NumericVector dijkstra(NumericMatrix adjacencyMatrix, int source, int target){
+  int n = adjacencyMatrix.nrow(); // nombre de sommets dans le graphe 
+  NumericVector distance(n); // vecteur des distances à partir de la source 
+  std::vector<int> trace(n); // vecteur de trace pour retracer le chemin le plus court 
+  
+  std::vector<bool> visited(n); // vecteur pour marquer les sommets visités ou non 
+
+  for (int i = 0; i < n; i++) { // initialisation des distances et des traces à partir de la source  
+    distance[i] = adjacencyMatrix(source, i);  
+    trace[i] = source;  
+    visited[i] = false;  
+  }
+
+  distance[source] = 0; // la distance à partir de la source est toujours 0  
+
+  for (int i = 0; i < n - 1; i++) { // boucle principale pour trouver les distances minimales à partir de la source    
+
+    int minDistanceIndex = -1;    
+
+    for (int j = 0; j < n; j++) {      
+
+      if (!visited[j] && (minDistanceIndex == -1 || distance[j] < distance[minDistanceIndex])){        
+
+        minDistanceIndex = j;      
+
+      }    
+
+    }    
+
+    visited[minDistanceIndex] = true;    
+
+    for (int j = 0; j < n; j++) {      
+
+      if (!visited[j]) {        
+
+        if (adjacencyMatrix(minDistanceIndex, j) != -1 && (distance[minDistanceIndex] + adjacencyMatrix(minDistanceIndex, j) < distance[j])) {          
+
+          distance[j] = distance[minDistanceIndex] + adjacencyMatrix(minDistanceIndex, j);          
+
+          trace[j] = minDistanceIndex;        
+
+        }      
+
+      }    
+
+    }  
+	}  	// fin de l'algorithme dijkstra et retourne la distance et la trace entre les inputs donnés  	
+    return Rcpp::List::create(Rcpp::Named("distance")=distance, Rcpp::Named("trace")=trace);
+}
