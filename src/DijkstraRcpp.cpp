@@ -2,7 +2,6 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-
 //' Dijkstra Algorithm to find shortest path from a node to others
 //'
 //' @param matriceAdjacence Data.frame object with three variables (from, to and weight)
@@ -22,10 +21,9 @@ using namespace Rcpp;
 //'                                    5  , 0  ,  0  ,  0  ,  4  ,    0  , 0), nrow  = 7))
 //' dijkstraRcpp(matriceAdjacence,2, 5)
 //'
-
-
 // [[Rcpp::export]]
-void dijkstraRcpp(NumericMatrix matriceAdjacence, int source, int dest) {
+
+void DijkstraRcpp(NumericMatrix matriceAdjacence, int source, int dest) {
   int D = dest;
   dest = dest-1;
   int V = matriceAdjacence.nrow();

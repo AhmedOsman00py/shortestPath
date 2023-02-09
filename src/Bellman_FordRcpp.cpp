@@ -19,11 +19,11 @@ using namespace Rcpp;
 //'                                    0  , 0  ,  0  ,  4  ,  0  ,    0  , 0,
 //'                                    1  , 0  ,  0  ,  0  ,  0  ,    0  , 0,
 //'                                    5  , 0  ,  0  ,  0  ,  4  ,    0  , 0), nrow  = 7))
-//' bellmanFordRcpp(matriceAdjacence,2)
+//' BellmanFordRcpp(matriceAdjacence,2)
 //'
 // [[Rcpp::export]]
 
-Rcpp::List bellmanFordRcpp(Rcpp::NumericMatrix matriceAdjacence, int source){
+Rcpp::List BellmanFordRcpp(Rcpp::NumericMatrix matriceAdjacence, int source){
 
   int n = matriceAdjacence.nrow();
 

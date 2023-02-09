@@ -11,15 +11,15 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// bellmanFordRcpp
-Rcpp::List bellmanFordRcpp(Rcpp::NumericMatrix matriceAdjacence, int source);
-RcppExport SEXP _AlgorithmicDijkstra_bellmanFordRcpp(SEXP matriceAdjacenceSEXP, SEXP sourceSEXP) {
+// BellmanFordRcpp
+Rcpp::List BellmanFordRcpp(Rcpp::NumericMatrix matriceAdjacence, int source);
+RcppExport SEXP _AlgorithmicDijkstra_BellmanFordRcpp(SEXP matriceAdjacenceSEXP, SEXP sourceSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type matriceAdjacence(matriceAdjacenceSEXP);
     Rcpp::traits::input_parameter< int >::type source(sourceSEXP);
-    rcpp_result_gen = Rcpp::wrap(bellmanFordRcpp(matriceAdjacence, source));
+    rcpp_result_gen = Rcpp::wrap(BellmanFordRcpp(matriceAdjacence, source));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -35,23 +35,23 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// dijkstraRcpp
-void dijkstraRcpp(NumericMatrix matriceAdjacence, int source, int dest);
-RcppExport SEXP _AlgorithmicDijkstra_dijkstraRcpp(SEXP matriceAdjacenceSEXP, SEXP sourceSEXP, SEXP destSEXP) {
+// DijkstraRcpp
+void DijkstraRcpp(NumericMatrix matriceAdjacence, int source, int dest);
+RcppExport SEXP _AlgorithmicDijkstra_DijkstraRcpp(SEXP matriceAdjacenceSEXP, SEXP sourceSEXP, SEXP destSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericMatrix >::type matriceAdjacence(matriceAdjacenceSEXP);
     Rcpp::traits::input_parameter< int >::type source(sourceSEXP);
     Rcpp::traits::input_parameter< int >::type dest(destSEXP);
-    dijkstraRcpp(matriceAdjacence, source, dest);
+    DijkstraRcpp(matriceAdjacence, source, dest);
     return R_NilValue;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_AlgorithmicDijkstra_bellmanFordRcpp", (DL_FUNC) &_AlgorithmicDijkstra_bellmanFordRcpp, 2},
+    {"_AlgorithmicDijkstra_BellmanFordRcpp", (DL_FUNC) &_AlgorithmicDijkstra_BellmanFordRcpp, 2},
     {"_AlgorithmicDijkstra_DijkstraC", (DL_FUNC) &_AlgorithmicDijkstra_DijkstraC, 2},
-    {"_AlgorithmicDijkstra_dijkstraRcpp", (DL_FUNC) &_AlgorithmicDijkstra_dijkstraRcpp, 3},
+    {"_AlgorithmicDijkstra_DijkstraRcpp", (DL_FUNC) &_AlgorithmicDijkstra_DijkstraRcpp, 3},
     {NULL, NULL, 0}
 };
 
