@@ -367,7 +367,7 @@ matriceAdjacence
 ### Bellman Ford
 
 ```{r}
-BellmanFordR(c("1", "2", "3", "4", "5", "6", "7"), graph_DataFrame, "3")
+bellmanFordR(c("1", "2", "3", "4", "5", "6", "7"), graph_DataFrame, "3")
 ```
 
 ```{r}
@@ -381,17 +381,17 @@ dijkstraRcpp(matriceAdjacence, 2, 5)
 ```
 
 ```{r}
-dijkstraC(matriceAdjacence, 2)
+DijkstraC(matriceAdjacence, 2)
 ```
 
 ```{r}
-dijkstraR(graph_DataFrame,"3")
+DijkstraR(graph_DataFrame,"3")
 ```
 
 ## Benchmark
 
 ```{r warning=TRUE, include=FALSE}
-tm <- microbenchmark(BellmanFordR(c("1", "2", "3", "4", "5", "6", "7"), graph_DataFrame, "3"),
+tm <- microbenchmark(bellmanFordR(c("1", "2", "3", "4", "5", "6", "7"), graph_DataFrame, "3"),
                      bellmanFordRcpp(matriceAdjacence, 2),
                      dijkstraC(matriceAdjacence, 2),
                      dijkstraRcpp(matriceAdjacence, 2, 5),

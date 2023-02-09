@@ -16,8 +16,9 @@
 #'                     to = c("a", "b", "c", "r", "a"),
 #'                     weight = c(3, 1, 2, 7, -4))
 #' start="r"
+#' BellmanFordR(vertices, edges, start)
 
-BellmanFord <- function(vertices, edges, start) {
+BellmanFordR <- function(vertices, edges, start) {
 
   # intialization
   n <- length(vertices)
