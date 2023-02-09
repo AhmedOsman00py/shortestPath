@@ -24,26 +24,26 @@ BEGIN_RCPP
 END_RCPP
 }
 // DijkstraC
-Rcpp::List DijkstraC(Rcpp::NumericMatrix adjacency_matrix, int source);
-RcppExport SEXP _AlgorithmicDijkstra_DijkstraC(SEXP adjacency_matrixSEXP, SEXP sourceSEXP) {
+Rcpp::List DijkstraC(Rcpp::NumericMatrix matriceAdjacence, int source);
+RcppExport SEXP _AlgorithmicDijkstra_DijkstraC(SEXP matriceAdjacenceSEXP, SEXP sourceSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type adjacency_matrix(adjacency_matrixSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type matriceAdjacence(matriceAdjacenceSEXP);
     Rcpp::traits::input_parameter< int >::type source(sourceSEXP);
-    rcpp_result_gen = Rcpp::wrap(DijkstraC(adjacency_matrix, source));
+    rcpp_result_gen = Rcpp::wrap(DijkstraC(matriceAdjacence, source));
     return rcpp_result_gen;
 END_RCPP
 }
 // dijkstraRcpp
-void dijkstraRcpp(NumericMatrix graph, int source, int dest);
-RcppExport SEXP _AlgorithmicDijkstra_dijkstraRcpp(SEXP graphSEXP, SEXP sourceSEXP, SEXP destSEXP) {
+void dijkstraRcpp(NumericMatrix matriceAdjacence, int source, int dest);
+RcppExport SEXP _AlgorithmicDijkstra_dijkstraRcpp(SEXP matriceAdjacenceSEXP, SEXP sourceSEXP, SEXP destSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericMatrix >::type graph(graphSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type matriceAdjacence(matriceAdjacenceSEXP);
     Rcpp::traits::input_parameter< int >::type source(sourceSEXP);
     Rcpp::traits::input_parameter< int >::type dest(destSEXP);
-    dijkstraRcpp(graph, source, dest);
+    dijkstraRcpp(matriceAdjacence, source, dest);
     return R_NilValue;
 END_RCPP
 }

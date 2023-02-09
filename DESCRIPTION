@@ -1,7 +1,7 @@
 Package: AlgorithmicDijkstra
 Type: Package
 Title: Shortest Path
-Version: 0.1.0
+Version: 0.1.1
 Author: M2 data science groupe dijkstra
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: Algorithme de Dijkstra et bellman-Ford pour la determination du plus court chemin 

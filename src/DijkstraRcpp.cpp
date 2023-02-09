@@ -6,7 +6,7 @@ using namespace Rcpp;
 //' Dijkstra Algorithm to find shortest path from a node to others
 //'
 //' @param matriceAdjacence Data.frame object with three variables (from, to and weight)
-//' that contains the edges of the graph_DataFrame (from, to) with the weight of the edge (w)
+//' that contains the edges of the matriceAdjacence (from, to) with the weight of the edge (w)
 //' @param source initial node (could be int or str).
 //' @return list of two elements.
 //' Distance: the shortest distance from the start node to other nodes (vector)
@@ -25,10 +25,10 @@ using namespace Rcpp;
 
 
 // [[Rcpp::export]]
-void dijkstraRcpp(NumericMatrix graph, int source, int dest) {
+void dijkstraRcpp(NumericMatrix matriceAdjacence, int source, int dest) {
   int D = dest;
   dest = dest-1;
-  int V = graph.nrow();
+  int V = matriceAdjacence.nrow();
   source = source - 1;
 
   NumericVector dist(V);
@@ -63,8 +63,8 @@ void dijkstraRcpp(NumericMatrix graph, int source, int dest) {
     visited[min_index] = true;
 
     for (int v = 0; v < V; v++)      {
-      if (!visited[v] && graph(min_index, v) && dist[min_index] != INT_MAX && dist[min_index]+graph(min_index , v) < dist[v])          {
-        dist[v] = dist[min_index] + graph(min_index,v);
+      if (!visited[v] && matriceAdjacence(min_index, v) && dist[min_index] != INT_MAX && dist[min_index]+matriceAdjacence(min_index , v) < dist[v])          {
+        dist[v] = dist[min_index] + matriceAdjacence(min_index,v);
       }
     }
   }
@@ -78,7 +78,7 @@ void dijkstraRcpp(NumericMatrix graph, int source, int dest) {
     path.push_back(dest);
     while(dest!=source){
       for(int i=0 ; i<V ; i++){
-        if(graph(i,dest) !=0 && dist[dest] - graph(i,dest) == dist[i]){
+        if(matriceAdjacence(i,dest) !=0 && dist[dest] - matriceAdjacence(i,dest) == dist[i]){
           path.push_back(i);
           dest = i ;
           break;

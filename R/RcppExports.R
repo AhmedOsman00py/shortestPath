@@ -45,14 +45,14 @@ bellmanFordRcpp <- function(matriceAdjacence, source) {
 #'
 NULL
 
-DijkstraC <- function(adjacency_matrix, source) {
-    .Call(`_AlgorithmicDijkstra_DijkstraC`, adjacency_matrix, source)
+DijkstraC <- function(matriceAdjacence, source) {
+    .Call(`_AlgorithmicDijkstra_DijkstraC`, matriceAdjacence, source)
 }
 
 #' Dijkstra Algorithm to find shortest path from a node to others
 #'
 #' @param matriceAdjacence Data.frame object with three variables (from, to and weight)
-#' that contains the edges of the graph_DataFrame (from, to) with the weight of the edge (w)
+#' that contains the edges of the matriceAdjacence (from, to) with the weight of the edge (w)
 #' @param source initial node (could be int or str).
 #' @return list of two elements.
 #' Distance: the shortest distance from the start node to other nodes (vector)
@@ -70,7 +70,7 @@ DijkstraC <- function(adjacency_matrix, source) {
 #'
 NULL
 
-dijkstraRcpp <- function(graph, source, dest) {
-    invisible(.Call(`_AlgorithmicDijkstra_dijkstraRcpp`, graph, source, dest))
+dijkstraRcpp <- function(matriceAdjacence, source, dest) {
+    invisible(.Call(`_AlgorithmicDijkstra_dijkstraRcpp`, matriceAdjacence, source, dest))
 }
 
