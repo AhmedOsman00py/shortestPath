@@ -1,32 +1,31 @@
-/**
-\Dijkstra Algorithm to find shortest path from a node to others
-\
-\@param matriceAdjacence Data.frame object with three variables (from, to and weight)
-\that contains the edges of the graph_DataFrame (from, to) with the weight of the edge (w)
-\@param source initial node (could be int or str).
-\@return list of two elements.
-\Distance: the shortest distance from the start node to other nodes (vector)
-\parents : the predecessor of each node (vector)
-\@export
-\@examples
-\matriceAdjacence = t(matrix(data = c(0  , 0  ,  0  ,  0  ,  0  ,    5  , 0,
-\                                   3  , 0  ,  0  ,  10 ,  3  ,   11  , 0,
-\                                   0  , 1  ,  0  ,  7  ,  0  ,   0   , 0,
-\                                   0  , 0  ,  0  ,  0  ,   0 ,    0  , 0,
-\                                   0  , 0  ,  0  ,  4  ,  0  ,    0  , 0,
-\                                   1  , 0  ,  0  ,  0  ,  0  ,    0  , 0,
-\                                   5  , 0  ,  0  ,  0  ,  4  ,    0  , 0), nrow  = 7))
-\DijkstraC(matriceAdjacence,2)
-*/
-
 #include <RcppArmadillo.h>
 #include <Rcpp.h>
 using namespace Rcpp;
 
 
+//' Dijkstra Algorithm to find shortest path from a node to others
+//'
+//' @param matriceAdjacence Data.frame object with three variables (from, to and weight)
+//' that contains the edges of the graph_DataFrame (from, to) with the weight of the edge (w)
+//' @param source initial node (could be int or str).
+//' @return list of two elements.
+//' Distance: the shortest distance from the start node to other nodes (vector)
+//' parents : the predecessor of each node (vector)
+//' @export
+//' @examples
+//' matriceAdjacence = t(matrix(data = c(0  , 0  ,  0  ,  0  ,  0  ,    5  , 0,
+//'                                    3  , 0  ,  0  ,  10 ,  3  ,   11  , 0,
+//'                                    0  , 1  ,  0  ,  7  ,  0  ,   0   , 0,
+//'                                    0  , 0  ,  0  ,  0  ,   0 ,    0  , 0,
+//'                                    0  , 0  ,  0  ,  4  ,  0  ,    0  , 0,
+//'                                    1  , 0  ,  0  ,  0  ,  0  ,    0  , 0,
+//'                                    5  , 0  ,  0  ,  0  ,  4  ,    0  , 0), nrow  = 7))
+//' DijkstraC(matriceAdjacence,2)
+//'
+
 // [[Rcpp::export]]
-Rcpp::List DijkstraC(Rcpp::NumericMatrix adjacency_matrix, int source) {
-  int n = adjacency_matrix.nrow();
+Rcpp::List DijkstraC(Rcpp::NumericMatrix matriceAdjacence, int source) {
+  int n = matriceAdjacence.nrow();
   Rcpp::NumericVector distances(n);
   Rcpp::IntegerVector predecessors(n);
 
@@ -53,8 +52,8 @@ Rcpp::List DijkstraC(Rcpp::NumericMatrix adjacency_matrix, int source) {
 
     visited[min_index] = true;                                                // on marque le sommet comme visité
     for (int i = 0; i < n ; i++) {
-      if (!visited[i] && adjacency_matrix(min_index,i) && distances[min_index] != INFINITY && distances[min_index] + adjacency_matrix(min_index,i) < distances[i]) {
-        distances[i] = distances[min_index] + adjacency_matrix(min_index,i);
+      if (!visited[i] && matriceAdjacence(min_index,i) && distances[min_index] != INFINITY && distances[min_index] + matriceAdjacence(min_index,i) < distances[i]) {
+        distances[i] = distances[min_index] + matriceAdjacence(min_index,i);
         predecessors[i] = min_index;
       }
     }

@@ -12,14 +12,14 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // bellmanFordRcpp
-Rcpp::List bellmanFordRcpp(Rcpp::NumericMatrix adjacencyMatrix, int source);
-RcppExport SEXP _AlgorithmicDijkstra_bellmanFordRcpp(SEXP adjacencyMatrixSEXP, SEXP sourceSEXP) {
+Rcpp::List bellmanFordRcpp(Rcpp::NumericMatrix matriceAdjacence, int source);
+RcppExport SEXP _AlgorithmicDijkstra_bellmanFordRcpp(SEXP matriceAdjacenceSEXP, SEXP sourceSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type adjacencyMatrix(adjacencyMatrixSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type matriceAdjacence(matriceAdjacenceSEXP);
     Rcpp::traits::input_parameter< int >::type source(sourceSEXP);
-    rcpp_result_gen = Rcpp::wrap(bellmanFordRcpp(adjacencyMatrix, source));
+    rcpp_result_gen = Rcpp::wrap(bellmanFordRcpp(matriceAdjacence, source));
     return rcpp_result_gen;
 END_RCPP
 }

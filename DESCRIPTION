@@ -1,29 +1,21 @@
 Package: AlgorithmicDijkstra
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Shortest Path
 Version: 0.1.0
-Author: Who wrote it
+Author: M2 data science groupe dijkstra
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: Algorithme de Dijkstra et bellman-Ford pour la determination du plus court chemin 
-             entre deux points d'un graphe.
-             - bellmanFordR, bellmanFordRcpp, DijkstraR et DijkstraRcpp permettent la determination du plus court chemin entre la source et tous les autres sommets
-             - DijkstraC permet d'avoir le chemin le plus court entre deux sommets donnés.
+  entre deux points d'un graphe.
+  - bellmanFordR, bellmanFordRcpp, DijkstraR et DijkstraRcpp permettent la determination 
+  du plus court chemin entre la source et tous les autres sommets
+  - DijkstraC permet d'avoir le chemin le plus court entre deux sommets donnés.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
 Imports:
-    Rcpp (>= 0.12.7), 
-    ggplot2 (>= 3.3.0), 
-    methods, 
-    lubridate, 
-    GIGrvg, 
-    stochvol (>= 2.0.3), 
-    RcppParallel
+    Rcpp (>= 0.12.7)
 LinkingTo:
     Rcpp, 
-    RcppArmadillo, 
-    RcppProgress, 
-    stochvol (>= 2.0.3), 
-    RcppParallel
+    RcppArmadillo
 
