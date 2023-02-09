@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(Rcpp)
 library(microbenchmark)
 library(ggplot2)
+library(AlgorithmicDijkstra)
 
 ```
 
