@@ -4,8 +4,9 @@ Projet Algorithmique - M2 Data Science
 ### installation et chargement du package 
 
 ```
+library("devtools")
 install_github('AhmedOsman00py/shortestPath')
-library(shortestPath)
+library(AlgorithmicDijkstra)
 ```
 
 vous pourrez ainsi utiliser les fonctions :
